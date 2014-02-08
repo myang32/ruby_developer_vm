@@ -8,15 +8,22 @@ Login with user "vagrant" and password "vagrant".
 
 The MySQL-Root user is "root". The password is "vagrant".
 
+## Build base box
 You can build the base box with the provided packer template.
+
+    cd packer-template
+    cd ubuntu_1310
+    packer build -only=virtualbox-iso template.json
+    vagrant box add ubuntu1310_new ./ubuntu1310.box
+
+## Build developer VM
 Afterwards use the Vagrantfile with the base box to install the rest of the VM.
 
-`$ vagrant plugin install vagrant-berkshelf`
+    cd vagrant
+    cd ubuntu_1310
+    vagrant plugin install vagrant-berkshelf
+    bundle
+    berks
+    vagrant up
 
-`$ bundle`
-
-`$ berks`
-
-`$ vagrant up`
-
-Tested with virtual box 4.3.6 and Ubuntu 13.10.
+Tested with VirtualBox 4.3.6 and VMware Workstation 9.0.2 and Ubuntu 13.10 on Windows 7 Enterprise.

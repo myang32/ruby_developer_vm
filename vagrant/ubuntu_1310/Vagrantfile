@@ -43,7 +43,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = [ 'cookbooks' ]
     chef.run_list = [
       "dev_box::basic_packages",
-      "git::source",
       "dev_box::desktop",
       "ruby_build",
       "rbenv::user",

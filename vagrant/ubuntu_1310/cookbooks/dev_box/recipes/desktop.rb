@@ -1,3 +1,7 @@
+package "git" do
+  action :install
+end
+
 package "ubuntu-desktop" do
   action :install
   options "--no-install-recommends"
